@@ -6,5 +6,6 @@ exclude =
     docs/source/conf.py,
     old,
     build,
-    dist
+    dist,
+    __init__.py
 max-line-length = 110

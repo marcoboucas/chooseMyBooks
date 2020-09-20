@@ -25,6 +25,6 @@ if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv()
     library = Library(api_key=os.getenv('apiKey', ""))
-    library.fetch_and_save(tag="", author="Bernard Minier")
-    # library.fetch_and_save(author="pierre bottero")
+    library.fetch(tag="", author="Bernard Minier")
+    # library.fetch(author="pierre bottero")
     print(library.library[['title', 'ISBN13']].head(80))

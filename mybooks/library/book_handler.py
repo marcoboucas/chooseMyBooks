@@ -53,6 +53,23 @@ class BookHandler():
         except:
             self.ids = []
 
+        # Change the types of the library
+        for col in ["id", "title", "ISBN13", "ISBN10", "thumbnail", "language", "link"]:
+            self.library[col] = self.library[col].astype(str)
+
+        for col in ['ISBN13', "ISBN10"]:
+            self.library[col] = self.library[col].astype(str).apply(lambda x: x.split('.')[0])
+
+        for col in ['authors', "categories"]:
+            try:
+                self.library[col] = self.library[col].apply(
+                    lambda x: list(map(lambda _: _[1:-1], x.strip('][').split(',')))
+                )
+            except:
+                pass
+        for col in ['pageCount']:
+            self.library[col] = self.library[col].astype(int)
+
 
 def transform_book(book):
     """Select only the needed data."""

@@ -10,7 +10,7 @@ class APICaller(LibraryLoader):
 
     api_key: str
 
-    def fetch(self, tag: str = "", author: str = ""):
+    def fetch_api(self, tag: str = "", author: str = ""):
         """Fetch data from the API."""
         tags = tag.lower().split(' ')
         authors = list(map(lambda x: "inauthor:" + x, author.lower().split(' ')))
@@ -23,9 +23,9 @@ class APICaller(LibraryLoader):
         )
         return result.json()
 
-    def fetch_and_save(self, *args, **kwargs):
+    def fetch(self, *args, **kwargs):
         """Save the result of an API."""
-        data = self.fetch(*args, **kwargs)
+        data = self.fetch_api(* args, **kwargs)
 
         if len(data["items"]) == 0:
             print(args, kwargs)
@@ -34,6 +34,3 @@ class APICaller(LibraryLoader):
         if "items" in data:
             # Update the library
             self.update_library(data['items'])
-
-            # Save library
-            self.save_library()
