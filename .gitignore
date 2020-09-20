@@ -1,0 +1,6 @@
+venv
+library.csv
+request.json
+
+__pycache__
+*.pyc
