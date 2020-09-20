@@ -1,8 +1,13 @@
 """Fill the library with some books."""
 
-from .library import Library
+
 import os
+
 from dotenv import load_dotenv
+
+from .library import Library
+
+
 load_dotenv()
 
 
@@ -42,7 +47,7 @@ TO_SEARCH = [
 ]
 
 if __name__ == "__main__":
-    library = Library(api_key=os.getenv('apiKey'))
+    library = Library(api_key=os.getenv('apiKey', ""))
     for search in TO_SEARCH:
         print(f"Search for {search}")
         library.fetch_and_save(author=search)

@@ -4,3 +4,6 @@ request.json
 
 __pycache__
 *.pyc
+
+.env
+.mypy_cache
