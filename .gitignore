@@ -1,6 +1,6 @@
 venv
-library.csv
 request.json
+user_database.json
 
 __pycache__
 *.pyc
@@ -8,3 +8,4 @@ __pycache__
 .env
 .mypy_cache
 .ipynb_checkpoints
+test.py

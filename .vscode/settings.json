@@ -1,8 +1,11 @@
 {
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true,
-    "files.exclude": {
-        "**/.ipynb_checkpoints": true,
-        "**/.mypy_cache": true
-    }
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "files.exclude": {
+    "**/.ipynb_checkpoints": true,
+    "**/.mypy_cache": true,
+    "**/__pycache__": true,
+    "**/venv": true
+  },
+  "python.linting.pylintArgs": ["--load-plugins", "pylint-flask"]
 }

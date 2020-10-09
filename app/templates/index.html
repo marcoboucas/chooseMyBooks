@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Book List</title>
+</head>
+
+<body>
+    {% if message %}
+    <h1>{{ message }}</h1>
+    {% endif %}
+    <form action="index" method="post">
+        {% csrf_token %}
+        <label for="search_author">Author:</label>
+        <input type="text" name="author" id="search_author" />
+
+        <input type="submit" value="Search" />
+    </form>
+    {% if books %}
+    <table>
+        <tbody>
+            <tr>
+                <th>ISBN13</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{book.isbn13}}</td>
+                <td>{{book.title}}</td>
+                <td>
+                    {% for author in book.authors.all %}
+                    {{author.name}},
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+</body>
+
+</html>

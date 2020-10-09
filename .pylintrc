@@ -1,2 +1,2 @@
 [MESSAGES CONTROL]
-disable=bare-except
+disable=bare-except,eval-used

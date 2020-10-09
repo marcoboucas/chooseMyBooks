@@ -1,6 +1,9 @@
-MODULE=src
+init:
+	python manage.py db init
 
-lint:
-	python -m pylint $(MODULE)
-	python -m flake8 $(MODULE)
-	python -m mypy $(MODULE)
+migrate:
+	#python manage.py db migrate --message "message of the modification"
+	#python manage.py db upgrade
+
+run:
+	python manage.py run
