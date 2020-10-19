@@ -1,7 +1,10 @@
 <html>
+{% load static %}
 
 <head>
     <title>Book List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
 </head>
 
 <body>
@@ -22,6 +25,8 @@
                 <th>ISBN13</th>
                 <th>Title</th>
                 <th>Author</th>
+                <th>X</th>
+                <th>Y</th>
             </tr>
             {% for book in books %}
             <tr>
@@ -32,6 +37,8 @@
                     {{author.name}},
                     {% endfor %}
                 </td>
+                <td>{{book.x}}</td>
+                <td>{{book.y}}</td>
             </tr>
             {% endfor %}
         </tbody>

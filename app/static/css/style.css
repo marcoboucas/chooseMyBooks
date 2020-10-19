@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: grey;
+}
+
+td,
+tr,
+table {
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  border-collapse: collapse;
+}

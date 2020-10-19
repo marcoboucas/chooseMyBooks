@@ -9,3 +9,6 @@ __pycache__
 .mypy_cache
 .ipynb_checkpoints
 test.py
+
+
+*.sqlite3

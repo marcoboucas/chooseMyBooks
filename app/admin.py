@@ -7,7 +7,7 @@ from .models.reading import Reading
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', "authors_names", "isbn13")
+    list_display = ('title', "authors_names", "isbn13", "x", "y")
 
     def authors_names(self, obj):
         return " ".join([x.name for x in obj.authors.all()])
